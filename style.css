@@ -1,3 +1,9 @@
+:root {
+  --primary: red;
+  --secondary: #0d1b2a;
+  --third: #1b263b;
+}
+
 body {
   margin: 0;
   font-size: 16px;
@@ -5,11 +11,15 @@ body {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 main {
-  background: #0d1b2a;
+  background: var(--secondary);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+}
+h1 {
+  color: white;
+  margin: 60px 0 0 0;
 }
 input {
   width: 80%;
@@ -17,40 +27,66 @@ input {
   border-radius: 5px;
   border: none;
 }
+input:focus {
+  outline: var(--primary) 1px solid;
+}
 .card {
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-direction: row;
   border-radius: 25px;
-  background: #1b263b;
+  background: var(--third);
   height: 450px;
   width: 800px;
+  padding-inline: 40px;
   animation: 8s border infinite;
 }
 .card-pic {
+  align-self: center;
+  width: 50%;
+  border-radius: 25px;
+  overflow: hidden;
+  > img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
 }
 .card-form {
-  width: 100%;
+  width: 50%;
   gap: 10px;
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   color: white;
   flex-direction: column;
 }
+.btn {
+  height: 40px;
+  width: 100px;
+  border-radius: 5px;
+  background: var(--primary);
+  color: white;
+  margin: 5px;
+}
+.btn:hover {
+  cursor: pointer;
+  background: var(--third);
+  transform: scale(1.05);
+  border: var(--primary) 1px solid;
+}
 
 @keyframes border {
   0% {
-    box-shadow: 5px 0px 15px 5px rgba(255, 0, 0, 0.5);
+    box-shadow: 5px 0px 15px 5px var(--primary);
   }
   35% {
-    box-shadow: 0px 5px 15px 5px rgba(255, 0, 0, 0.5);
+    box-shadow: 0px 5px 15px 5px var(--primary);
   }
   70% {
-    box-shadow: -5px 0px 15px 5px rgba(255, 0, 0, 0.5);
+    box-shadow: -5px 0px 15px 5px var(--primary);
   }
   100% {
-    box-shadow: 0px -5px 15px 5px rgba(255, 0, 0, 0.5);
+    box-shadow: 0px -5px 15px 5px var(--primary);
   }
 }
